@@ -1,0 +1,8 @@
+com/selenium/ui/google/zadanie1/SharedDriver.class
+com/selenium/ui/google/zadanie1/PageSteps.class
+com/selenium/ui/google/zadanie1/WebDriverFactory.class
+com/selenium/ui/google/zadanie1/AdditionalConditions$1.class
+com/selenium/ui/google/zadanie1/AdditionalConditions.class
+com/selenium/ui/google/CucumberIT.class
+com/selenium/ui/google/zadanie1/GoogleSearchPage.class
+com/selenium/ui/google/zadanie1/SharedDriver$1.class

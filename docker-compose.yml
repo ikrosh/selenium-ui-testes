@@ -1,0 +1,34 @@
+version: '2'
+services:
+  selenium-hub:
+    image: selenium/hub:3.6.0-copper
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      -  http_proxy=${http_proxy}
+      -  https_proxy=${https_proxy}
+
+  node-chrome:
+    image: selenium/node-chrome-debug:3.6.0-copper
+    environment:
+      -  HUB_PORT_4444_TCP_ADDR=selenium-hub
+      -  HUB_PORT_4444_TCP_PORT=4444
+      -  http_proxy=${http_proxy}
+      -  https_proxy=${https_proxy}
+    ports:
+      - "5900:5900"
+    volumes:
+      - /dev/shm:/dev/shm
+
+  node-firefox:
+    image: selenium/node-firefox-debug:3.6.0-copper
+    environment:
+      -  HUB_PORT_4444_TCP_ADDR=selenium-hub
+      -  HUB_PORT_4444_TCP_PORT=4444
+      -  http_proxy=${http_proxy}
+      -  https_proxy=${https_proxy}
+    ports:
+      - "5901:5900"
+    volumes:
+      - /dev/shm:/dev/shm
